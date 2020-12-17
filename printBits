@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+void printBits(char c)
+{
+	unsigned char mask = 1 << 7;
+
+	printf("Bits are %d (mask = %d):", c, mask);
+
+	for (int i = 0; i < 8; i++)
+	{
+	putchar((c & mask) ? '1' : '0');
+	c <<=1;
+	}
+}
+
+int main()
+{
+	printBits('A');
+	printf("\n");
+	printBits(~'A');
+		return 0;
+}
