@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main()
+{
+    FILE *fp;
+    FILE *fp2;
+
+    int height, weight;
+    int BMI;
+    int i = 0;
+
+    fp = fopen("inputBMI.txt", "r");
+    fp2 = fopen("bmiOut", "w");
+
+    for(i = 0; i < 6; i++);
+    {
+    	fscanf(fp, "%d %d", &weight, &height);
+    	BMI= (weight * 703) / (height * height);
+    	fprintf(fp2,"weight: %d height: %d bmi: %d", weight, height, BMI);
+    }
+
+    fclose(fp);
+    fclose(fp2);
+    return(0)
+
+}
